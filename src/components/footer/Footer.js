@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { memo } from "react";
 
-function Footer() {
+function Footer(props) {
   const filterItems = ["All", "Active", "Completed"];
   const functionItems = [
     {
@@ -32,6 +33,11 @@ function Footer() {
     }
 
     document.querySelector(".search-input").placeholder = e.currentTarget.title
+    if (e.currentTarget.title === "Add new") {
+      document.querySelector(".search-input").value = ""
+    } else {
+      document.querySelector(".search-input").value = props.dataFromWrapper
+    }
     document.querySelector(".search-input").focus()
   };
 
@@ -86,4 +92,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

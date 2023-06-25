@@ -1,18 +1,14 @@
-function ListTodo() {
+function ListTodo(props) {
+  const works = props.dataFromWrapper;
+
   return (
     <div className="list-todo">
-      <div className="list-item">
-        <input type="checkbox" id="1" />
-        <label htmlFor="1">ALO</label>
-      </div>
-      <div className="list-item">
-        <input type="checkbox" id="2" />
-        <label htmlFor="2">ALO</label>
-      </div>
-      <div className="list-item">
-        <input type="checkbox" id="3" />
-        <label htmlFor="3">ALO</label>
-      </div>
+      {works.map((work, index) => (
+        <div className="list-item" key={index}>
+          <input type="checkbox" id={index} />
+          <label htmlFor={index}>{work}</label>
+        </div>
+      ))}
     </div>
   );
 }
