@@ -7,6 +7,7 @@ function Wrapper() {
       <div className="wrapper">
         <p className="header">THINGS TO DO</p>
         <input className="search-input" placeholder="Add new" autoFocus />
+        <div className="alert hidden">There are no items.</div>
         <ListTodo />
         <Footer />
       </div>

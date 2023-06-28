@@ -46,6 +46,13 @@ html {
   box-shadow: inset 0 0 rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
+.alert {
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  padding: 10px;
+  text-align: left;
+}
+
 .hidden {
   display: none;
 }
@@ -84,6 +91,7 @@ input:checked ~ label {
 .plus-icon,
 .search-icon {
   margin: 0px 5px;
+  filter: opacity(.5);
 }
 
 .function {
@@ -92,16 +100,12 @@ input:checked ~ label {
 }
 
 .function-active {
-  color: #000;
+  filter: opacity(1);
 }
 
 .plus-icon:hover, .search-icon:hover {
-  color: #000;
   cursor: pointer;
-}
-
-.plus-icon:focus ~ .footer-wrapper {
-  background-color: #000;
+  filter: opacity(1);
 }
 
 .function::after {

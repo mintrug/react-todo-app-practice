@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import searchIcon from "../../assets/icons-search.svg"
+import plusIcon from "../../assets/icons-plus.svg"
 
 function Footer() {
   const filterItems = ["All", "Active", "Completed"];
@@ -7,15 +7,16 @@ function Footer() {
     {
       title: "Add new",
       className: "plus-icon",
-      icon: faPlus,
+      icon: plusIcon,
     },
     {
       title: "Search",
       className: "search-icon",
-      icon: faSearch,
+      icon: searchIcon,
     },
   ];
 
+  // Update function button effect
   const handleFunction = (e) => {
     const functionItems = Array.from(document.querySelectorAll("span"))
     const functionItemClasslist = e.currentTarget.classList
@@ -35,6 +36,7 @@ function Footer() {
     document.querySelector(".search-input").focus()
   };
 
+  // Update filter button effect
   const handleFilter = (e) => {
     const filterItemElements = Array.from(
       document.querySelectorAll(".filter-item")
@@ -58,13 +60,7 @@ function Footer() {
             }`}
             onClick={handleFunction}
           >
-            <FontAwesomeIcon
-              style={{
-                height: "18px",
-                width: "18px",
-              }}
-              icon={functionItem.icon}
-            />
+            <img src={functionItem.icon} alt={functionItem.title}></img>
           </span>
         ))}
       </div>
