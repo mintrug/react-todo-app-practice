@@ -1,19 +1,21 @@
-import ListTodo from "../list_todo/ListTodo";
-import Footer from "../footer/Footer";
+import Header from '../ui/Header'
+import ListTodo from '../ui/ListTodo'
+import Footer from '../ui/Footer'
+import StateProvider from './StateProvider'
 
 function Wrapper() {
-  return (
-    <div>
-      <div className="wrapper">
-        <p className="header">THINGS TO DO</p>
-        <input className="search-input" placeholder="Add new" autoFocus />
-        <div className="alert hidden">There are no items.</div>
-        <ListTodo />
-        <Footer />
-      </div>
-      <p className="info">Press `Esc` to cancel.</p>
-    </div>
-  );
+    return (
+        <div>
+            <div className='wrapper'>
+                <StateProvider>
+                    <Header />
+                    <ListTodo />
+                    <Footer />
+                </StateProvider>
+            </div>
+            <p className='info'>Press `Esc` to cancel.</p>
+        </div>
+    )
 }
 
-export default Wrapper;
+export default Wrapper
