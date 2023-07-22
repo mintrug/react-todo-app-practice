@@ -1,6 +1,6 @@
 import Filter from './Filter'
-import searchIcon from '../../assets/icons-search.svg'
-import plusIcon from '../../assets/icons-plus.svg'
+import searchIcon from '../../assets/images/icons-search.svg'
+import plusIcon from '../../assets/images/icons-plus.svg'
 
 function Footer(props) {
     const { countContent, filter } = props.data
