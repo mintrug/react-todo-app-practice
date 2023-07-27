@@ -1,8 +1,18 @@
+import { useEffect } from 'react'
+
 function SearchBox(props) {
     const { query, setSearchQuery } = props
     const handleSearch = (e) => {
         setSearchQuery(e.target.value)
     }
+
+    // handle cleanup
+    useEffect(() => {
+        return () => {
+            setSearchQuery('')
+        }
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <input

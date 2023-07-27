@@ -1,22 +1,9 @@
 import Filter from './Filter'
-import searchIcon from '../../assets/images/icons-search.svg'
-import plusIcon from '../../assets/images/icons-plus.svg'
+import WrapperFunctionBtn from './WrapperFunctionBtn'
 
 function Footer(props) {
-    const { countContent, filter } = props.data
-    const { changeFilter } = props.actions
-    const functionItems = [
-        {
-            title: 'Add new',
-            className: 'plus-icon',
-            icon: plusIcon,
-        },
-        {
-            title: 'Search',
-            className: 'search-icon',
-            icon: searchIcon,
-        },
-    ]
+    const { countContent, filter, mode } = props.data
+    const { changeFilter, changeMode } = props.actions
 
     // // Update function button effect
     // const handleFunction = (e) => {
@@ -42,23 +29,7 @@ function Footer(props) {
     return (
         <div className='footer-wrapper'>
             <div className='function'>
-                {functionItems.map((functionItem) => (
-                    <span
-                        title={functionItem.title}
-                        key={functionItem.title}
-                        className={`${functionItem.className} ${
-                            functionItem.className === 'plus-icon'
-                                ? 'function-active'
-                                : ''
-                        }`}
-                        // onClick={handleFunction}
-                    >
-                        <img
-                            src={functionItem.icon}
-                            alt={functionItem.title}
-                        ></img>
-                    </span>
-                ))}
+                <WrapperFunctionBtn changeMode={changeMode} mode={mode} />
             </div>
             <div className='count-content'>{`${countContent} items left`}</div>
             <div className='filter'>
