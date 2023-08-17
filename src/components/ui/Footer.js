@@ -5,27 +5,6 @@ function Footer(props) {
     const { countContent, filter, mode } = props.data
     const { changeFilter, changeMode } = props.actions
 
-    // // Update function button effect
-    // const handleFunction = (e) => {
-    //     const functionItems = Array.from(document.querySelectorAll('span'))
-    //     const functionItemClasslist = e.currentTarget.classList
-
-    //     if (Array.from(functionItemClasslist).includes('function-active')) {
-    //         document.querySelector('.search-input').classList.add('hidden')
-    //         functionItemClasslist.remove('function-active')
-    //     } else {
-    //         document.querySelector('.search-input').classList.remove('hidden')
-    //         functionItems.map((functionItem) =>
-    //             functionItem.classList.remove('function-active')
-    //         )
-    //         functionItemClasslist.add('function-active')
-    //     }
-
-    //     document.querySelector('.search-input').placeholder =
-    //         e.currentTarget.title
-    //     document.querySelector('.search-input').focus()
-    // }
-
     return (
         <div className='footer-wrapper'>
             <div className='function'>

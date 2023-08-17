@@ -2,18 +2,26 @@ import Header from '../ui/Header'
 import ListTodo from '../ui/ListTodo'
 import Footer from '../ui/Footer'
 import StateProvider from './StateProvider'
+import KeyStrokeHandler from './KeyStrokeHandler'
+import Info from '../ui/Info'
 
 function Wrapper() {
     return (
         <div>
             <div className='wrapper'>
                 <StateProvider>
-                    <Header />
-                    <ListTodo />
-                    <Footer />
+                    <KeyStrokeHandler>
+                        <Header />
+                        <ListTodo />
+                        <Footer />
+                    </KeyStrokeHandler>
                 </StateProvider>
             </div>
-            <p className='info'>Press `Esc` to cancel.</p>
+            <StateProvider>
+                <KeyStrokeHandler>
+                    <Info />
+                </KeyStrokeHandler>
+            </StateProvider>
         </div>
     )
 }
